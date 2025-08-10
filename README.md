@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd9a593d3b2e6a2113686d6e030cb10701349d82f48ebec2da6589593cc41eb3
-size 3486
+# GigaChat RAG Service
+## File structure
+
+* configs - directory with .env files
+* docker - directory with files for creating docker image
+* data - directory to store .docx files for RAG
+* models - directory with model weights
+* modules - directory with business logic
+    * utils - helping functions
+    * schemas - pydantic schemas for endpoints
+    * database - connection to database and its operations
+    * prompts - collection of prompts for llm
+    * gigachat - GigaChat API functionality
+
+## Start up
+1. Clone repository
+> git clone http://gitlab.sigma-belpsb.by/datascience/gigachat_rag_service.git
+2. Create virtual environment and switch to it
+> python -m venv venv
+3. Install requirements
+> pip install -r docker/requirements.txt
+4. Run app
+> uvicorn main:app --port 7110 --host 0.0.0.0
